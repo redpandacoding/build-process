@@ -1,5 +1,8 @@
 # Zeek Build Process
 
+## Issues
+*PLEASE* report all issues to our [YouTrack System](https://youtrack.redpandacoding.com/youtrack/issues/BP).
+
 ## What It Does
 This package helps to set up a project with the following tools:
 
@@ -14,14 +17,26 @@ This package helps to set up a project with the following tools:
 * a `Makefile` to assist in running build and scanning commands in a consistent and simple manner
 * installation to a `git` pre-commit hook that will automatically run the `cs-fixer`, `linter` and `phpstan`
 
+### Symfony Recipes
+Here is the current recipe versions being used for each library:
+
+| Library | Symfony Recipe Version |
+| PHPUnit | 9.6 |
+| php-cs-fixer | 3.0 |
+| phpstan | Modified to low entry (from 1.0) |
+
 ## Demo
 
 https://user-images.githubusercontent.com/953022/166144308-9eb0efd2-2ae4-4c1d-919e-5986bc9b89de.mp4
 
 ## Requirements
-This works with both Laravel and WordPress projects*.
+If you have *ANY* Private repositories in your project you will need to create `COMPOSER_AUTH_JSON` as a GitHub secret for the repository. (You will want to have this on the repo that uses this library)
+
+This works with both Laravel, WordPress and Symfony projects*.
 
 WordPress project structure must follow the Zeek project structure (`mu-plugins/app/`).
+
+Symfony project structure follows [Symfony Standards](https://symfony.com/doc/current/best_practices.html), and expecting you are using [Symfony Flex](https://symfony.com/components/Symfony%20Flex) with the [Recipes](https://github.com/symfony/recipes) and [Contrib Recipes](https://github.com/symfony/recipes-contrib).
 
 ## Setup
 Require this package as a `dev` dependency:
