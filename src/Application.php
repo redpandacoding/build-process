@@ -48,6 +48,7 @@ class Application
      * @var string
      */
     private string $templateDir;
+    private bool $isSy = false;
 
     /**
      * Run the application
@@ -103,9 +104,10 @@ class Application
     {
         $this->pwd = $_SERVER['PWD'];
         $this->isWp = str_contains($this->pwd, '/wp-content');
+        $this->isSy = is_file($this->pwd.'/symfony.lock');
 
         $templateDir = sprintf('templates%s',
-            $this->isWp ? '-wp' : ''
+            $this->isWp ? '-wp' : ($this->isSy ? '-sy' : '')
         );
 
         $this->templateDir = sprintf('%s/%s',
