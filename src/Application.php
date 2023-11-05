@@ -8,6 +8,7 @@ use ZeekBuildProcess\Traits\GitHook;
 use ZeekBuildProcess\Traits\Github;
 use ZeekBuildProcess\Traits\Help;
 use ZeekBuildProcess\Traits\ShellUtils;
+use ZeekBuildProcess\Traits\SySupport;
 use ZeekBuildProcess\Traits\WpSupport;
 
 class Application
@@ -18,11 +19,12 @@ class Application
     use GitHook;
     use ComposerPackages;
     use WpSupport;
+    use SySupport;
 
     /**
      * The current version of this package
      */
-    private const VERSION = '1.0.0';
+    private const VERSION = '1.1.0';
 
     /**
      * Whether to overwrite existing build process files
@@ -160,6 +162,7 @@ class Application
         $this->rsyncFileSafely('build/', 'build');
 
         $this->wpSpecificReplacements();
+        $this->sySpecificReplacements();
     }
 
     private function uninstall(): void

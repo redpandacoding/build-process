@@ -14,6 +14,10 @@ trait ShellUtils
 
     private function rsyncFileSafely(string $file, ?string $destination = null): void
     {
+        if ($destination === 'build' and $this->isSy) {
+            // This folder is not used for Symfony setup
+            return;
+        }
         if (empty($destination)) {
             $destination = $file;
         }
