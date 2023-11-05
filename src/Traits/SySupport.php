@@ -16,6 +16,7 @@ trait SySupport
         $this->rsyncFileSafely('phpmd-baseline.xml');
         $this->rsyncFileSafely('phpmd.xml');
         $this->rsyncFileSafely('phpstan.neon');
+        $this->rsyncFileSafely('phpstan-baseline.neon');
         $this->rsyncFileSafely('phpunit.xml.dist');
 
 
