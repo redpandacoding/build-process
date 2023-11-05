@@ -33,7 +33,7 @@ clean: ## Removes all build dependencies (vendor, node_modules)
 
 # Build Tooling
 cs-fixer: ## Code styling fixer
-	@$(bin)/php-cs-fixer fix --config=php-cs-fixer.php --quiet
+	@$(bin)/php-cs-fixer fix --config=.php-cs-fixer.php --quiet
 
 lint: ## PHP Syntax Checking
 	@$(bin)/parallel-lint -j 10 app config routes --no-progress --colors --blame
