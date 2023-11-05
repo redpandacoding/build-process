@@ -6,6 +6,8 @@ parameters:
         - public/
         - src/
         - tests/
+    excludePaths:
+        - tests/_support/_generated/
 includes:
     - vendor/phpstan/phpstan-symfony/extension.neon
     - vendor/phpstan/phpstan-symfony/rules.neon
