@@ -52,10 +52,10 @@ phpmd-baseline: ## PHP Mess Detection. Generate Baseline
 	@$(bin)/phpmd $(appDir)/src,$(appDir)/src-psr-4 ansi build/phpmd/phpmd.xml --generate-baseline
 
 phpstan: ## PHP Static Analyzer
-	@$(bin)/phpstan analyse --error-format=table -c build/phpstan/phpstan.neon.dist
+	@$(bin)/phpstan analyse --error-format=table -c build/phpstan/phpstan.neon
 
 phpstan-ci:
-	@$(bin)/phpstan analyse --no-progress --error-format=github -c build/phpstan/phpstan.neon.dist
+	@$(bin)/phpstan analyse --no-progress --error-format=github -c build/phpstan/phpstan.neon
 
 phpstan-baseline: ## PHP Static Analyzer. Generate Baseline.
-	@$(bin)/phpstan analyse --error-format=table -c build/phpstan/phpstan.neon.dist --generate-baseline=build/phpstan/phpstan-baseline.neon --allow-empty-baseline
+	@$(bin)/phpstan analyse --error-format=table -c build/phpstan/phpstan.neon --generate-baseline=build/phpstan/phpstan-baseline.neon --allow-empty-baseline
