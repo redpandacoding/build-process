@@ -5,4 +5,9 @@ packages = [
     "phpmd/phpmd",
     "phpstan/phpstan",
     "phpstan/phpstan-symfony",
+    "codeception/codeception",
+    "codeception/module-asserts",
+    "codeception/module-db",
+    "codeception/module-phpbrowser",
+    "codeception/module-symfony",
 ]
