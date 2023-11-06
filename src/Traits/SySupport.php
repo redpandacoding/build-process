@@ -13,7 +13,7 @@ trait SySupport
 
         $this->rsyncFileSafely('.env.test');
         $this->rsyncFileSafely('.php-cs-fixer.php');
-        $this->rsyncFileSafely('phpmd-baseline.xml');
+        $this->rsyncFileSafely('phpmd.baseline.xml');
         $this->rsyncFileSafely('phpmd.xml');
         $this->rsyncFileSafely('phpstan.neon');
         $this->rsyncFileSafely('phpstan-baseline.neon');
